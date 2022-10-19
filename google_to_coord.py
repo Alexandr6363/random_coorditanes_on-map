@@ -6,7 +6,7 @@ with open("google_coord.txt", "r") as file:
 list_of_coord = []
 for coordinat in coordinates:
     coord_in_string = coordinat[34:36] + "\xb0" + coordinat[42:49] + coordinat[52] +\
-                      " " + coordinat[54:56] + "\xb0" + coordinat[62:69] + coordinat[73]
+                      " " + coordinat[54:56] + "\xb0" + coordinat[62:69] + coordinat[72]
     list_of_coord.append(coord_in_string)
 
 
