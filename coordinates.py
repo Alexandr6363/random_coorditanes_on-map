@@ -50,18 +50,6 @@ for cord in list_of_cord:
 
 
 
-"""
-https://www.google.com/maps/place/20%C2%B056'11.0%22S+55%C2%B024'03.6%22W/
-
-56° 34' 14.04'
-
-"""
-# return f"{self.side_EW} {self.parallels_degrees} {self.parallels_minutes} {self.parallels_seconds}" \
-#        f"{self.side_SN} {self.meridian_degrees} {self.meridian_minutes} {self.meridian_seconds}"
-
-
-
-
 
 
 
