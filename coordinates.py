@@ -6,6 +6,8 @@ Arr2 = ["E", "W"]
 
 class Coordinate:
         def __init__(self):
+            self.meridian = round(random.uniform(0, 180), 5)
+            self.palallels = round(random.uniform(0, 90), 5)
             self.meridian_degrees = random.randint(0, 180)
             self.meridian_minutes = random.randint(0, 60)
             self.meridian_seconds = round(random.uniform(0, 60), 2)
@@ -14,6 +16,8 @@ class Coordinate:
             self.parallels_minutes = random.randint(0, 60)
             self.parallels_seconds = round(random.uniform(0, 60), 2)
             self.side_EW = random.choice(Arr2)
+            self.coordinates = f"{self.side_SN} {str(self.palallels)} " \
+               f"{self.side_EW} {str(self.meridian)}"
             self.coordinate_link = f"https://www.google.com/maps/place/" \
                    f"{self.parallels_degrees}%C2%B0{self.parallels_minutes}'" \
                    f"{self.parallels_seconds}%22{self.side_SN}+" \
@@ -23,16 +27,22 @@ class Coordinate:
         def __str__(self):
             return self.coordinate_link
 
-        def write_list_of_coordinates_in_file(self):
+        def write_list_of_googlemap_link_in_file(self):
             with open("link_list.txt", "a") as file:
                 file.write(self.coordinate_link)
+                file.write("\n")
+
+        def write_list_of_coordinates_in_file(self):
+            with open("list_of_cord.txt", "a") as file:
+                file.write(self.coordinates)
                 file.write("\n")
 
 
 list_of_cord = [Coordinate() for i in range(20)]
 for cord in list_of_cord:
+    cord.write_list_of_googlemap_link_in_file()
     cord.write_list_of_coordinates_in_file()
-    print(cord)
+
 
 
 
